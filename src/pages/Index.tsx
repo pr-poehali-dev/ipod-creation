@@ -17,7 +17,7 @@ export default function Index() {
   const [chatOpen, setChatOpen] = useState(false)
 
   return (
-    <div className="dark" style={{ cursor: "none" }}>
+    <div className="dark">
       <Navbar onChatOpen={() => setChatOpen(true)} />
       <main>
         <Hero3D onChatOpen={() => setChatOpen(true)} />
