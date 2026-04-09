@@ -188,7 +188,7 @@ export const Hero3DWebGL = () => {
               boxShadow: '0 0 20px rgba(0,212,255,0.6), 0 0 40px rgba(0,212,255,0.3)',
             }}
           >
-            Начать бесплатно
+            Начать чат
           </button>
         </div>
       </div>

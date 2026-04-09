@@ -31,7 +31,7 @@ export function Navbar() {
 
           <div className="hidden md:block">
             <Button className="bg-cyan-500 hover:bg-cyan-400 text-black font-bold font-geist border-0" style={{boxShadow: '0 0 15px rgba(0,212,255,0.4)'}}>
-              Попробовать бесплатно
+              Начать чат
             </Button>
           </div>
 
@@ -59,7 +59,7 @@ export function Navbar() {
               </a>
               <div className="px-3 py-2">
                 <Button className="w-full bg-cyan-500 hover:bg-cyan-400 text-black font-bold font-geist border-0">
-                  Попробовать бесплатно
+                  Начать чат
                 </Button>
               </div>
             </div>

@@ -27,7 +27,7 @@ export function CTASection() {
                 boxShadow: '0 0 25px rgba(0,212,255,0.5), 0 0 50px rgba(0,212,255,0.2)',
               }}
             >
-              Начать бесплатно
+              Начать чат
             </Button>
             <Button
               size="lg"
@@ -38,10 +38,6 @@ export function CTASection() {
               Посмотреть демо
             </Button>
           </div>
-
-          <p className="mt-6 text-gray-500 text-sm">
-            50 бесплатных запросов в день · Без кредитной карты · Мгновенный доступ
-          </p>
         </div>
       </div>
     </section>

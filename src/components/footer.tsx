@@ -48,7 +48,7 @@ export function Footer() {
               </li>
               <li>
                 <a href="#" className="font-space-mono text-gray-400 hover:text-cyan-400 transition-colors duration-200">
-                  Тарифы
+                  Начать чат
                 </a>
               </li>
             </ul>
