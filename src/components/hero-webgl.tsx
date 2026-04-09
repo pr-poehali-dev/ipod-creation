@@ -32,7 +32,6 @@ const Scene = () => {
       uniform float uTime;
       varying vec2 vUv;
 
-      // Simple noise function
       float random(vec2 st) {
         return fract(sin(dot(st.xy, vec2(12.9898,78.233))) * 43758.5453123);
       }
@@ -51,15 +50,12 @@ const Scene = () => {
       void main() {
         vec2 uv = vUv;
 
-        // Depth-based displacement
         float depth = texture2D(uDepthMap, uv).r;
         vec2 displacement = depth * uPointer * 0.01;
         vec2 distortedUv = uv + displacement;
 
-        // Base texture
         vec4 baseColor = texture2D(uTexture, distortedUv);
 
-        // Create scanning effect
         float aspect = ${WIDTH}.0 / ${HEIGHT}.0;
         vec2 tUv = vec2(uv.x * aspect, uv.y);
         vec2 tiling = vec2(120.0);
@@ -69,14 +65,15 @@ const Scene = () => {
         float dist = length(tiledUv);
         float dot = smoothstep(0.5, 0.49, dist) * brightness;
 
-        // Flow effect based on progress
         float flow = 1.0 - smoothstep(0.0, 0.02, abs(depth - uProgress));
 
-        // Red scanning overlay
-        vec3 mask = vec3(dot * flow * 10.0, 0.0, 0.0);
+        // Cyan neon scanning overlay
+        vec3 mask = vec3(0.0, dot * flow * 10.0, dot * flow * 10.0);
 
-        // Combine effects
-        vec3 final = baseColor.rgb + mask;
+        // Cyan tint on base color
+        vec3 tinted = mix(baseColor.rgb, vec3(0.0, 0.83, 1.0), 0.15);
+
+        vec3 final = tinted + mask;
 
         gl_FragColor = vec4(final, 1.0);
       }
@@ -114,8 +111,8 @@ const Scene = () => {
 }
 
 export const Hero3DWebGL = () => {
-  const titleWords = "Synapse AI".split(" ")
-  const subtitle = "Нейроинтерфейсы нового поколения."
+  const titleWords = "NeyroMax AI".split(" ")
+  const subtitle = "Нейросеть для написания кода на базе Mistral API"
   const [visibleWords, setVisibleWords] = useState(0)
   const [subtitleVisible, setSubtitleVisible] = useState(false)
   const [delays, setDelays] = useState<number[]>([])
@@ -147,7 +144,7 @@ export const Hero3DWebGL = () => {
 
       <div className="h-screen uppercase items-center w-full absolute z-[60] pointer-events-none px-10 flex justify-center flex-col">
         <div className="text-3xl md:text-5xl xl:text-6xl 2xl:text-7xl font-extrabold font-orbitron">
-          <div className="flex space-x-2 lg:space-x-6 overflow-hidden text-white">
+          <div className="flex space-x-2 lg:space-x-6 overflow-hidden">
             {titleWords.map((word, index) => (
               <div
                 key={index}
@@ -155,6 +152,8 @@ export const Hero3DWebGL = () => {
                 style={{
                   animationDelay: `${index * 0.13 + (delays[index] || 0)}s`,
                   opacity: index < visibleWords ? undefined : 0,
+                  color: index === 0 ? '#ffffff' : '#00d4ff',
+                  textShadow: index === 0 ? 'none' : '0 0 20px #00d4ff, 0 0 40px #00d4ff',
                 }}
               >
                 {word}
@@ -162,16 +161,35 @@ export const Hero3DWebGL = () => {
             ))}
           </div>
         </div>
-        <div className="text-xs md:text-xl xl:text-2xl 2xl:text-3xl mt-2 overflow-hidden text-white font-bold max-w-4xl mx-auto text-center px-4">
+        <div className="text-xs md:text-xl xl:text-2xl 2xl:text-3xl mt-2 overflow-hidden text-white font-bold max-w-4xl mx-auto text-center px-4 normal-case">
           <div
             className={subtitleVisible ? "fade-in-subtitle" : ""}
             style={{
               animationDelay: `${titleWords.length * 0.13 + 0.2 + subtitleDelay}s`,
               opacity: subtitleVisible ? undefined : 0,
+              color: '#a0e8ff',
             }}
           >
             {subtitle}
           </div>
+        </div>
+
+        <div
+          className={subtitleVisible ? "fade-in-subtitle mt-8 pointer-events-auto" : "mt-8 pointer-events-auto"}
+          style={{
+            animationDelay: `${titleWords.length * 0.13 + 0.8}s`,
+            opacity: subtitleVisible ? undefined : 0,
+          }}
+        >
+          <button
+            className="px-8 py-3 text-black font-bold text-lg font-geist rounded-lg uppercase"
+            style={{
+              background: '#00d4ff',
+              boxShadow: '0 0 20px rgba(0,212,255,0.6), 0 0 40px rgba(0,212,255,0.3)',
+            }}
+          >
+            Начать бесплатно
+          </button>
         </div>
       </div>
 
