@@ -1,0 +1,12 @@
+{
+  "tests": [
+    {
+      "name": "Keep-alive ping",
+      "method": "GET",
+      "path": "/",
+      "expectedStatus": 200,
+      "expectedBody": { "alive": true },
+      "bodyMatcher": "partial"
+    }
+  ]
+}

@@ -1,4 +1,5 @@
-import { useState } from "react"
+import { useState, useEffect } from "react"
+import func2url from "../../backend/func2url.json"
 import { Hero3DWebGL as Hero3D } from "@/components/hero-webgl"
 import { FeaturesSection } from "@/components/features-section"
 import { TechnologySection } from "@/components/technology-section"
@@ -15,6 +16,13 @@ import { CursorGlow } from "@/components/cursor-glow"
 
 export default function Index() {
   const [chatOpen, setChatOpen] = useState(false)
+
+  useEffect(() => {
+    const ping = () => fetch(func2url["keep-alive"]).catch(() => null)
+    ping()
+    const id = setInterval(ping, 4 * 60 * 1000)
+    return () => clearInterval(id)
+  }, [])
 
   return (
     <div className="dark">

@@ -83,7 +83,15 @@ export function Footer() {
 
         <div className="mt-8 pt-8 border-t border-cyan-500/20">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="font-space-mono text-gray-400 text-sm">© 2026 NeyroMax. Все права защищены.</p>
+            <div className="flex flex-col gap-1">
+              <p className="font-space-mono text-gray-400 text-sm">© 2026 NeyroMax. Все права защищены.</p>
+              <p className="font-space-mono text-gray-600 text-xs">
+                Разработано:{" "}
+                <span className="text-cyan-500/70 hover:text-cyan-400 transition-colors duration-200 cursor-default">
+                  Максим Полиенко
+                </span>
+              </p>
+            </div>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="font-space-mono text-gray-400 hover:text-cyan-400 text-sm transition-colors duration-200">
                 Конфиденциальность
