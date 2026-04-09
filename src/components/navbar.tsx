@@ -2,7 +2,11 @@ import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import Icon from "@/components/ui/icon"
 
-export function Navbar() {
+interface NavbarProps {
+  onChatOpen: () => void
+}
+
+export function Navbar({ onChatOpen }: NavbarProps) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -30,16 +34,13 @@ export function Navbar() {
           </div>
 
           <div className="hidden md:block">
-            <Button className="bg-cyan-500 hover:bg-cyan-400 text-black font-bold font-geist border-0" style={{boxShadow: '0 0 15px rgba(0,212,255,0.4)'}}>
+            <Button onClick={onChatOpen} className="bg-cyan-500 hover:bg-cyan-400 text-black font-bold font-geist border-0" style={{boxShadow: '0 0 15px rgba(0,212,255,0.4)'}}>
               Начать чат
             </Button>
           </div>
 
           <div className="md:hidden">
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-white hover:text-cyan-400 transition-colors duration-200"
-            >
+            <button onClick={() => setIsOpen(!isOpen)} className="text-white hover:text-cyan-400 transition-colors duration-200">
               <Icon name={isOpen ? "X" : "Menu"} size={24} />
             </button>
           </div>
@@ -58,7 +59,7 @@ export function Navbar() {
                 Вопросы
               </a>
               <div className="px-3 py-2">
-                <Button className="w-full bg-cyan-500 hover:bg-cyan-400 text-black font-bold font-geist border-0">
+                <Button onClick={() => { onChatOpen(); setIsOpen(false) }} className="w-full bg-cyan-500 hover:bg-cyan-400 text-black font-bold font-geist border-0">
                   Начать чат
                 </Button>
               </div>

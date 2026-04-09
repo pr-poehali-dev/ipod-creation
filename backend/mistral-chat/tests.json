@@ -1,0 +1,13 @@
+{
+  "tests": [
+    {
+      "name": "Chat with Mistral",
+      "method": "POST",
+      "path": "/",
+      "body": {"messages": [{"role": "user", "content": "Напиши hello world на Python"}]},
+      "expectedStatus": 200,
+      "expectedBody": {"reply": "string"},
+      "bodyMatcher": "partial"
+    }
+  ]
+}

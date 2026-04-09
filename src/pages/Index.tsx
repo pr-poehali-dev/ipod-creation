@@ -1,3 +1,4 @@
+import { useState } from "react"
 import { Hero3DWebGL as Hero3D } from "@/components/hero-webgl"
 import { FeaturesSection } from "@/components/features-section"
 import { TechnologySection } from "@/components/technology-section"
@@ -9,13 +10,16 @@ import { FAQSection } from "@/components/faq-section"
 import { CTASection } from "@/components/cta-section"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
+import { ChatModal } from "@/components/chat-modal"
 
 export default function Index() {
+  const [chatOpen, setChatOpen] = useState(false)
+
   return (
     <div className="dark">
-      <Navbar />
+      <Navbar onChatOpen={() => setChatOpen(true)} />
       <main>
-        <Hero3D />
+        <Hero3D onChatOpen={() => setChatOpen(true)} />
         <FeaturesSection />
         <section id="technology">
           <TechnologySection />
@@ -29,9 +33,10 @@ export default function Index() {
         <section id="faq">
           <FAQSection />
         </section>
-        <CTASection />
+        <CTASection onChatOpen={() => setChatOpen(true)} />
       </main>
       <Footer />
+      <ChatModal open={chatOpen} onClose={() => setChatOpen(false)} />
     </div>
   )
 }

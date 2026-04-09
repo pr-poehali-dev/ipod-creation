@@ -110,7 +110,7 @@ const Scene = () => {
   )
 }
 
-export const Hero3DWebGL = () => {
+export const Hero3DWebGL = ({ onChatOpen }: { onChatOpen?: () => void }) => {
   const titleWords = "NeyroMax AI".split(" ")
   const subtitle = "Нейросеть для написания кода на базе Mistral API"
   const [visibleWords, setVisibleWords] = useState(0)
@@ -182,6 +182,7 @@ export const Hero3DWebGL = () => {
           }}
         >
           <button
+            onClick={onChatOpen}
             className="px-8 py-3 text-black font-bold text-lg font-geist rounded-lg uppercase"
             style={{
               background: '#00d4ff',

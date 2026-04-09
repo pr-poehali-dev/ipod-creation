@@ -1,6 +1,10 @@
 import { Button } from "@/components/ui/button"
 
-export function CTASection() {
+interface CTASectionProps {
+  onChatOpen: () => void
+}
+
+export function CTASection({ onChatOpen }: CTASectionProps) {
   return (
     <section className="py-24 px-6 bg-black relative overflow-hidden">
       <div
@@ -18,26 +22,17 @@ export function CTASection() {
             Присоединяйтесь к тысячам разработчиков, которые уже используют NeyroMax для генерации,
             отладки и документирования кода с помощью Mistral AI.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button
-              size="lg"
-              className="text-black font-bold text-lg px-8 py-4 pulse-button"
-              style={{
-                background: '#00d4ff',
-                boxShadow: '0 0 25px rgba(0,212,255,0.5), 0 0 50px rgba(0,212,255,0.2)',
-              }}
-            >
-              Начать чат
-            </Button>
-            <Button
-              size="lg"
-              variant="outline"
-              className="border-cyan-500 text-cyan-400 hover:bg-cyan-500 hover:text-black text-lg px-8 py-4 bg-transparent transition-all duration-300"
-              style={{boxShadow: '0 0 15px rgba(0,212,255,0.1)'}}
-            >
-              Посмотреть демо
-            </Button>
-          </div>
+          <Button
+            size="lg"
+            onClick={onChatOpen}
+            className="text-black font-bold text-lg px-10 py-4 pulse-button"
+            style={{
+              background: '#00d4ff',
+              boxShadow: '0 0 25px rgba(0,212,255,0.5), 0 0 50px rgba(0,212,255,0.2)',
+            }}
+          >
+            Начать чат
+          </Button>
         </div>
       </div>
     </section>
