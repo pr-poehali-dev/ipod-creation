@@ -129,7 +129,7 @@ export function ChatModal({ open, onClose }: ChatModalProps) {
             <span className="font-orbitron font-bold text-white text-sm">
               Neyro<span className="text-cyan-400">Max</span>
             </span>
-            <span className="text-xs text-gray-500 font-space-mono">powered by Mistral</span>
+            <span className="text-xs text-gray-500 font-space-mono">AI Code Assistant</span>
           </div>
           <button onClick={onClose} className="text-gray-400 hover:text-cyan-400 transition-colors">
             <Icon name="X" size={20} />

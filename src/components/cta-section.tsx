@@ -20,7 +20,7 @@ export function CTASection({ onChatOpen }: CTASectionProps) {
           </h2>
           <p className="text-xl text-gray-300 mb-10 leading-relaxed max-w-2xl mx-auto">
             Присоединяйтесь к тысячам разработчиков, которые уже используют NeyroMax для генерации,
-            отладки и документирования кода с помощью Mistral AI.
+            отладки и документирования кода с помощью NeyroMax.
           </p>
           <Button
             size="lg"

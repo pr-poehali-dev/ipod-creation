@@ -112,7 +112,7 @@ const Scene = () => {
 
 export const Hero3DWebGL = ({ onChatOpen }: { onChatOpen?: () => void }) => {
   const titleWords = "NeyroMax AI".split(" ")
-  const subtitle = "Нейросеть для написания кода на базе Mistral API"
+  const subtitle = "Нейросеть нового поколения для написания кода"
   const [visibleWords, setVisibleWords] = useState(0)
   const [subtitleVisible, setSubtitleVisible] = useState(false)
   const [delays, setDelays] = useState<number[]>([])

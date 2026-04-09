@@ -11,12 +11,13 @@ import { CTASection } from "@/components/cta-section"
 import { Navbar } from "@/components/navbar"
 import { Footer } from "@/components/footer"
 import { ChatModal } from "@/components/chat-modal"
+import { CursorGlow } from "@/components/cursor-glow"
 
 export default function Index() {
   const [chatOpen, setChatOpen] = useState(false)
 
   return (
-    <div className="dark">
+    <div className="dark" style={{ cursor: "none" }}>
       <Navbar onChatOpen={() => setChatOpen(true)} />
       <main>
         <Hero3D onChatOpen={() => setChatOpen(true)} />
@@ -37,6 +38,7 @@ export default function Index() {
       </main>
       <Footer />
       <ChatModal open={chatOpen} onClose={() => setChatOpen(false)} />
+      <CursorGlow />
     </div>
   )
 }

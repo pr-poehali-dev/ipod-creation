@@ -32,7 +32,7 @@ export function ApplicationsTimeline() {
       content: (
         <div>
           <p className="text-gray-300 text-sm md:text-base font-normal mb-6 leading-relaxed">
-            Mistral AI генерирует чистый, готовый к использованию код с комментариями. Поддерживается
+            NeyroMax генерирует чистый, готовый к использованию код с комментариями. Поддерживается
             более 30 языков программирования и популярных фреймворков.
           </p>
           <div className="space-y-3">

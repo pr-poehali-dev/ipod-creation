@@ -6,7 +6,7 @@ const features = [
     title: "Генерация кода на лету",
     description: "Опишите задачу на русском — NeyroMax мгновенно напишет готовый код на Python, JavaScript, TypeScript и других языках.",
     icon: "⚡",
-    badge: "Mistral AI",
+    badge: "NeyroMax",
   },
   {
     title: "Объяснение кода",

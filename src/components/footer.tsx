@@ -10,7 +10,7 @@ export function Footer() {
               Neyro<span className="text-cyan-400" style={{textShadow: '0 0 10px #00d4ff'}}>Max</span>
             </h2>
             <p className="font-space-mono text-gray-300 mb-6 max-w-md">
-              AI-нейросеть для написания кода на базе Mistral API. Генерируйте, анализируйте и улучшайте код на естественном языке.
+              AI-нейросеть для написания кода. Генерируйте, анализируйте и улучшайте код на естественном языке.
             </p>
             <div className="flex space-x-4">
               <a href="#" className="text-gray-400 hover:text-cyan-400 transition-colors duration-200">
@@ -83,7 +83,7 @@ export function Footer() {
 
         <div className="mt-8 pt-8 border-t border-cyan-500/20">
           <div className="flex flex-col md:flex-row justify-between items-center">
-            <p className="font-space-mono text-gray-400 text-sm">© 2026 NeyroMax. Все права защищены. Powered by Mistral AI.</p>
+            <p className="font-space-mono text-gray-400 text-sm">© 2026 NeyroMax. Все права защищены.</p>
             <div className="flex space-x-6 mt-4 md:mt-0">
               <a href="#" className="font-space-mono text-gray-400 hover:text-cyan-400 text-sm transition-colors duration-200">
                 Конфиденциальность
